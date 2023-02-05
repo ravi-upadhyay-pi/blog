@@ -6,16 +6,14 @@
   width: 1000px;
 }
 
-.header {
-  gap: 10px;
-  justify-content: center;  
-  width: 100%;
+.border {
+  border-block: 2px dashed var(--cl-pr);
 }
 
-.contact {
-  align-items: center;
+.logo > img {
+  width: 100px;
 }
 
-.contact > .line2 {
-  gap: 10px;
+.skills > img {
+  width: 32px;
 }

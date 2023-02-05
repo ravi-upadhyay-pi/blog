@@ -2,17 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
 
+* { box-sizing: border-box; margin: 0px; padding: 0px;}
 
 :root {
+  /* Normal font */
+  color: black;
   font-family: 'Fira Sans', sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
 
+  /** Colors */
+  --cl-pr: brown;
+  --cl-sc: grey;
+
+  /* Themes */  
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
+  /* Font renderings */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,26 +26,41 @@
   -webkit-text-size-adjust: 100%;
 }
 
+/* Standard elements style */
+h1 {
+  font-family: 'Raleway';
+  font-size: 28px;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: Ubuntu;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+h3 {
+  font-family: Ubuntu;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+h4 {
+  font-family: Ubuntu;
+  font-size: 14px;
+  font-weight: 500;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
-a:hover {
-  color: #535bf2;
-}
+a:hover { color: #535bf2; }
 
 body {
-  margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  justify-content: center;
 }
 
 button {
@@ -61,6 +82,23 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Colors */
+.cl-pr { color: var(--cl-pr); } /* primary */
+.cl-sc { color: var(--cl-sc); } /* secondary */
+
+/** Layouts */
+.fr { display: flex; flex-direction: row; }
+.fc { display: flex; flex-direction: column; }
+.jc-sb { justify-content: space-between; }
+.jc-c { justify-content: center; }
+.jc-e { justify-content: end; }
+.ai-e { align-items: end; }
+.g-8 { gap: 8px; }
+
+/* Padding */
+.py-8 { padding-block: 8px; }
+
+/** Theme */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -72,60 +110,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
-
-* {
-  box-sizing: border-box;
-}
-
-
-#root {
-  background: black;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  width: 100%;
-}
-
-/* Primary color */
-.cl-pr {
-  color: brown;
-}
-
-/* Secondary color */
-.cl-sc {
-  color: grey;
-}
-
-/* Flex Display - Direction Row */
-.fr {
-  display: flex;
-  flex-direction: row;
-}
-
-/* Flex Display - Direction Row */
-.fc {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Title type font */
-.ft-tl {
-  font-family: 'Raleway';
-  font-size: 30px;
-  font-weight: 700;
-}
-
-.ft-h1 {
-  font-family: Ubuntu;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.ft-h3 {
-  font-family: Ubuntu;
-  font-size: 14px;
-  font-weight: 500;
 }
