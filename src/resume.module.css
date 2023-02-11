@@ -1,0 +1,26 @@
+.container {
+    background: white;
+    gap: 16px;
+    margin-top: 24px;
+    padding: 24px;
+    width: 1000px;
+}
+
+.icons {
+    font-size: 20px;
+}
+
+.border {
+    border-block: 2px dashed var(--cl-pr);
+}
+
+.companyLogo {
+    object-fit: contain;
+    max-width: 100px;
+    max-height: 42px;
+}
+
+.skillLogo {
+    object-fit: contain;
+    max-height: 32px;
+}

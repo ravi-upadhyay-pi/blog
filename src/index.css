@@ -2,7 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
 
-* { box-sizing: border-box; margin: 0px; padding: 0px;}
+* { 
+  box-sizing: border-box; 
+  margin: 0px; 
+  padding: 0px;
+}
 
 :root {
   /* Normal font */
@@ -93,6 +97,7 @@ button:focus-visible {
 .jc-c { justify-content: center; }
 .jc-e { justify-content: end; }
 .ai-e { align-items: end; }
+.ai-c { align-items: center; }
 .g-8 { gap: 8px; }
 
 /* Padding */
