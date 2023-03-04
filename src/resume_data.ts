@@ -109,5 +109,13 @@ export const Resume: IResume = {
         'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png',
         // Web Assembly
         'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/WebAssembly_Logo.svg/2048px-WebAssembly_Logo.svg.png',
-    ]
+    ],
+    educations: [{
+        institute: 'Indian Institute of Technology',
+        place: 'Kharagpur',
+        degree: 'Masters of Science',
+        stream: 'Mathematics and Computing',
+        startDate: '2010',
+        endDate: '2015',
+    },],
 };
