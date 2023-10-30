@@ -1,0 +1,5 @@
+ravi.upadhyay.one {
+    root * /srv/www/blog
+    file_server
+    try_files {path} /index.html
+}

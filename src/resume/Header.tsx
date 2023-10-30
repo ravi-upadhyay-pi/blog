@@ -1,10 +1,7 @@
-import { IHeader } from './data';
-import { titleContainer, secondaryColor } from './common_style';
-import { addressContainer } from "./common_style";
-import { IResume } from "./data";
-import { icon } from "./common_style";
-
-const iconClass = `${icon()} material-icons`;
+import { IHeader } from './model';
+import { secondaryColor } from './styles';
+import { IResume } from './model';
+import { css, flexRow } from '../styles';
 
 export const Header = ({ header }: { header: IHeader }) => (
   <>
@@ -13,7 +10,6 @@ export const Header = ({ header }: { header: IHeader }) => (
     <h3>{header.resumeHead}</h3>
   </>
 );
-
 
 const Title = ({ header }: { header: IHeader }) => (
   <div className={titleContainer()}>
@@ -32,4 +28,20 @@ const Address = ({ header }: { header: IHeader }) => (
     <span className={iconClass}>email</span>
     <h4>{header.email}</h4>
   </div>
-)
+);
+
+const titleContainer = css(flexRow, {
+  justifyContent: 'center',
+});
+
+const addressContainer = css(flexRow, {
+  justifyContent: 'center',
+  alignItems: 'center',
+  color: '$secondary',
+});
+
+const icon = css({
+  fontSize: 20,
+});
+
+const iconClass = `${icon()} material-icons`;
