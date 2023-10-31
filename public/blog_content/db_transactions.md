@@ -14,7 +14,7 @@ Consistent and Durable property are very trivial properties. Consistent means
 that running a transaction should not leave the database in in consistent state.
 This property is very vague and actually doesn't tell us much. Durable means
 that a transactions writes should be saved so that if database crashes later,
-the writes should be effective when the data is read after the databas comes up
+the writes should be effective when the data is read after the database comes up
 again.
 
 Atomic property, by name may indicate, that a transaction should not appear

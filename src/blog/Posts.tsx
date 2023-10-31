@@ -1,11 +1,11 @@
-import { css, flexColumn, flexRow } from '../styles';
 import { AboutMe } from './AboutMe';
 import { ShortPost } from './ShortPost';
+import { containerClass } from './Posts.css';
 import { posts } from './data';
 
 export const Posts = () => {
   return (
-    <div className={containerClass()}>
+    <div className={containerClass}>
       <h1>Blog</h1>
       {posts.map((post) => (
         <ShortPost post={post} />
@@ -14,11 +14,3 @@ export const Posts = () => {
     </div>
   );
 };
-
-const containerClass = css(flexColumn, {
-  border: '2px solid #ddd',
-  borderRadius: '2px',
-  marginTop: '16px',
-  padding: '12px',
-  width: '800px',
-});

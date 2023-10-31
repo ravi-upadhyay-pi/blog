@@ -4,7 +4,8 @@ import { posts } from './data';
 import { useParams } from 'react-router-dom';
 import Markdown from 'react-markdown';
 import React, { useState, useEffect } from 'react';
-import { css, flexColumn } from '../styles';
+import { postContainerClass, lineClass, contentClass } from './Post.css';
+import './post.scss';
 
 export const PostPage = () => {
   const { id } = useParams();
@@ -25,22 +26,14 @@ const Post: React.FC<PostProps> = ({ post }) => {
     })();
   }, []);
   return (
-    <div className={postContainerClass()}>
+    <div className={postContainerClass}>
       <h1>{post.title}</h1>
       <div>{post.author}</div>
       <div>{post.date.toLocaleDateString()}</div>
-      <div className={lineClass()}></div>
-      <Markdown>{content}</Markdown>
+      <div className={lineClass}></div>
+      <div className={[contentClass, 'markdown'].join(' ')}>
+        <Markdown>{content}</Markdown>
+      </div>
     </div>
   );
 };
-
-const postContainerClass = css(flexColumn, {
-  marginTop: '16px',
-  width: '600px',
-});
-
-const lineClass = css({
-  backgroundColor: '#900',
-  height: '1px',
-});

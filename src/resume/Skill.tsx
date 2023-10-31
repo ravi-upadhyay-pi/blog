@@ -1,19 +1,15 @@
 import { ISkill } from './model';
-import { css, flexColumn } from '../styles';
-import { borderedContainer } from './styles';
+import { flexColumn } from '../styles.css';
+import { borderedContainer } from './Common.css';
+import { skillImg } from './Skill.css';
 
 export const Skill = ({ skills }: { skills: ISkill[] }) => (
-  <div className={flexColumn()}>
+  <div className={flexColumn}>
     <h2>Skill</h2>
-    <div className={borderedContainer()}>
+    <div className={borderedContainer}>
       {skills.map((skillLogo) => (
-        <img className={skillImg()} src={skillLogo} />
+        <img className={skillImg} src={skillLogo} />
       ))}
     </div>
   </div>
 );
-
-export const skillImg = css({
-  objectFit: 'contain',
-  maxHeight: 32,
-});
