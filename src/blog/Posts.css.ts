@@ -11,3 +11,7 @@ export const containerClass = style([
     width: '800px',
   },
 ]);
+
+export const listContainerClass = style({
+  marginLeft: '16px',
+});

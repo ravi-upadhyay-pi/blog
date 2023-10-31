@@ -8,6 +8,9 @@ export interface ShortPostProps {
 
 export const ShortPost: React.FC<ShortPostProps> = ({ post }) => (
   <li>
-    <Link to={`/blog/${post.url}`}>{post.title}</Link>
+    <div>
+      <Link to={`/blog/${post.url}`}>{post.title}</Link>
+      <div>{post.summary}</div>
+    </div>
   </li>
 );

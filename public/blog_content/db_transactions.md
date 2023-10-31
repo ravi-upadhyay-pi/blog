@@ -17,30 +17,41 @@ that a transactions writes should be saved so that if database crashes later,
 the writes should be effective when the data is read after the database comes up
 again.
 
-Atomic property, by name may indicate, that a transaction should not appear
+## Atomicity
+
+Atomic property, by name indicates that a transaction should not appear
 to be composed of different statements, but rather, it should behave like a
 single non decomposable thing.
 
-The actual definition of atomic in this context is also similar. It indicates
-that a database transaction can not have partial writes in the database. Either
-the whole transaction succeeds, or if it fails, then there should be no partial
-writes in database. That means, in the transaction example below:
+The actual definition of atomic in this context is also similar. It means
+that a database transaction can not have partial writes. Either the whole
+transaction succeeds, or if it fails, then there should be no partial
+writes in database.
+
+See the transaction example below.
 
 ```
-update <table1>
-set <column1> = <value1>
-where <condition1>;
+update bank_balance
+set balance = account1_balance - 10
+where account_id = 1;
 
-update <table2>
-set <column2> = <value2>
-where <condition2>;
+update bank_balance
+set balance = account2_balance + 10
+where account_id = 2;
 ```
 
-either both the update statement should succeed, or neither of them succeeds.
+Suppose, if the first update statement runs, and the transaction then fails for
+some reason, before running executing the second one, then the effect of first
+statement will be rolled back because of the atomic property. If the database
+did not have atomic property then it might be possible that amount 10 is
+deducted from account 1, but not added to account 2.
 
-So, if the first update statement runs, and the transaction then fails for some
-reason before running all statements in it, then the effect of first statement
-must be rolled back by the database.
+Because of atomic proerty of transaction, users running the transaction need
+not worry about how much of a transaction went through in case of failure. Its
+guaranteed that either all the writes were done or none. So in case of failure
+the user can retry the statement again.
+
+## Isolation
 
 Isolation is a complex and one of the most misunderstood property. Isolation, as
 name suggests, means that a transaction is isolated from other transasctions.

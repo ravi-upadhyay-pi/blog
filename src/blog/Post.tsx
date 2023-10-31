@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import Markdown from 'react-markdown';
 import React, { useState, useEffect } from 'react';
 import { postContainerClass, lineClass, contentClass } from './Post.css';
-import './post.scss';
+import './Post.scss';
 
 export const PostPage = () => {
   const { id } = useParams();

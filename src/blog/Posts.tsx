@@ -1,15 +1,17 @@
 import { AboutMe } from './AboutMe';
 import { ShortPost } from './ShortPost';
-import { containerClass } from './Posts.css';
+import { containerClass, listContainerClass } from './Posts.css';
 import { posts } from './data';
 
 export const Posts = () => {
   return (
     <div className={containerClass}>
       <h1>Blog</h1>
-      {posts.map((post) => (
-        <ShortPost post={post} />
-      ))}
+      <ul className={listContainerClass}>
+        {posts.map((post) => (
+          <ShortPost post={post} />
+        ))}
+      </ul>
       <AboutMe />
     </div>
   );

@@ -3,5 +3,6 @@ export interface IPost {
   url: string;
   date: Date;
   author: string;
+  summary: string;
   contentFileName: string;
 }
