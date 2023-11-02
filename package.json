@@ -1,28 +1,36 @@
 {
-  "name": "github-page",
+  "name": "vite-project",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@stitches/react": "^1.2.8",
-    "@vanilla-extract/css": "^1.13.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-markdown": "^9.0.0",
-    "react-router-dom": "^6.8.1"
+    "dev": "vite --config .config/vite.config.ts",
+    "build": "vite --config .config/vite.config.ts build ",
+    "preview": "vite --config .config/vite.config.ts preview",
+    "lint": "eslint -c .config/eslintrc.cjs .",
+    "format": "prettier --config .config/prettierrc -w ."
   },
   "devDependencies": {
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
-    "@vanilla-extract/vite-plugin": "^3.9.0",
-    "@vitejs/plugin-react": "^3.1.0",
+    "@sveltejs/vite-plugin-svelte": "^2.4.2",
+    "@tsconfig/svelte": "^5.0.0",
+    "@types/page": "^1.11.8",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.9.1",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-svelte": "^2.30.0",
+    "page": "^1.11.6",
+    "prettier": "^2.8.0",
+    "prettier-plugin-svelte": "^2.10.1",
     "sass": "^1.69.5",
-    "typescript": "^4.9.5",
-    "vite": "^4.1.0"
+    "svelte": "^4.0.5",
+    "svelte-eslint-parser": "^0.33.1",
+    "svelte-preprocess": "^5.1.0",
+    "tslib": "^2.6.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "svelte-markdown": "^0.4.0"
   }
 }

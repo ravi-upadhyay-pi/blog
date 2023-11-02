@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Raleway:wght@700&family=Ubuntu:wght@500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  background: white;
+  color: black;
+  display: flex;
+  font-family: Fira Sans, sans-serif;
+  font-size: 14px;
+  font-synthesis: none;
+  justify-content: center;
+  line-height: 20px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  color: var(--color-primary);
+  font-family: Raleway;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+h2 {
+  color: var(--color-primary);
+  font-family: Ubuntu;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-family: Ubuntu;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+h4 {
+  font-family: Ubuntu;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+p {
+  margin-bottom: 8px;
+}

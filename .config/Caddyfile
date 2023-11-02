@@ -1,4 +1,4 @@
-ravi.upadhyay.one {    
+:5174 {    
     handle /resume* {
         uri strip_prefix /resume
         root * /srv/www/resume
