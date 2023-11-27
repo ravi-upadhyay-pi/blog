@@ -1,7 +1,7 @@
 <script lang="ts">
-  import AboutMe from "../component/AboutMe.svelte";
-  import { posts } from "./lib/data";
-  import Link from "../component/Link.svelte";
+  import AboutMe from '../shared/AboutMe.svelte';
+  import Link from '../shared/Link.svelte';
+  import { posts } from './shared/data';
 </script>
 
 <div class="container">
@@ -20,7 +20,7 @@
 </div>
 
 <style lang="scss">
-  @use "../style/common.scss";
+  @use '../style/common.scss';
 
   .container {
     @extend %flex-column;

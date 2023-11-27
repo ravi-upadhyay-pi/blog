@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { setupRoutes } from "./router";
-  import PageLoading from "./component/PageLoading.svelte";
+  import PageLoading from './shared/PageLoading.svelte';
+  import { setupRoutes } from './shared/router';
 
   const store = setupRoutes(
-    [["/", "/blog"]],
+    [['/', '/blog']],
     [
-      ["/blog/:id", () => import("./blog/BlogPage.svelte")],
-      ["/blog", () => import("./blog/ListPage.svelte")],
-      ["*", () => import("./component/NotFound.svelte")],
+      ['/blog/:id', () => import('./blog/BlogPage.svelte')],
+      ['/blog', () => import('./blog/ListPage.svelte')],
+      ['*', () => import('./shared/NotFound.svelte')]
     ],
     PageLoading
   );

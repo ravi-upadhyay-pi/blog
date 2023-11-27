@@ -14,23 +14,26 @@
     "@sveltejs/vite-plugin-svelte": "^2.4.2",
     "@tsconfig/svelte": "^5.0.0",
     "@types/page": "^1.11.8",
+    "@types/react": "^18.2.38",
+    "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.9.1",
+    "@vitejs/plugin-react": "^3.1.0",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-svelte": "^2.30.0",
     "page": "^1.11.6",
     "prettier": "^2.8.0",
     "prettier-plugin-svelte": "^2.10.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sass": "^1.69.5",
     "svelte": "^4.0.5",
     "svelte-eslint-parser": "^0.33.1",
+    "svelte-markdown": "^0.4.0",
     "svelte-preprocess": "^5.1.0",
     "tslib": "^2.6.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
-  },
-  "dependencies": {
-    "svelte-markdown": "^0.4.0"
   }
 }

@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { ROUTE_STORE } from "../router";
-  import SvelteMarkdown from "svelte-markdown";
+  import SvelteMarkdown from 'svelte-markdown';
+  import { ROUTE_STORE } from '../shared/router';
 
-  const blogId: string = $ROUTE_STORE.context.params["id"];
-  const url = "/blog/" + blogId + ".md";
+  const blogId: string = $ROUTE_STORE.context.params['id'];
+  const url = '/blog/' + blogId + '.md';
   const content = fetch(url).then((response) => response.text());
 </script>
 
