@@ -14,7 +14,9 @@
   });
 
   onDestroy(() => {
-    root.unmount();
+    if (root) {
+      root.unmount();
+    }
   });
 </script>
 
