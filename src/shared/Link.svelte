@@ -1,5 +1,5 @@
 <script lang="ts">
-  import page from "page";
+  import page from 'page';
 
   export let href: string;
 

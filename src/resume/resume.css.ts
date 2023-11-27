@@ -5,24 +5,24 @@ import { createTheme } from '@vanilla-extract/css';
 export const [themeClass, vars] = createTheme({
   space: {
     small: '4px',
-    medium: '8px'
+    medium: '8px',
   },
   colors: {
     primary: 'brown',
-    secondary: 'gray'
-  }
+    secondary: 'gray',
+  },
 });
 
 export const flexRow = style({
   display: 'flex',
   flexDirection: 'row',
-  gap: '8px'
+  gap: '8px',
 });
 
 export const flexColumn = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: '8px'
+  gap: '8px',
 });
 
 export const borderedContainer = style([
@@ -31,19 +31,19 @@ export const borderedContainer = style([
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingBlock: 8,
-    borderBlock: `1px dashed ${vars.colors.primary}`
-  }
+    borderBlock: `1px dashed ${vars.colors.primary}`,
+  },
 ]);
 
 export const secondaryColor = style({
-  color: vars.colors.secondary
+  color: vars.colors.secondary,
 });
 
 export const pageClass = style({
   background: 'black',
   display: 'flex',
   width: '100vw',
-  justifyContent: 'center'
+  justifyContent: 'center',
 });
 
 export const resumeContainer = style([
@@ -52,15 +52,15 @@ export const resumeContainer = style([
     background: 'white',
     gap: 16,
     padding: 24,
-    width: 1000
-  }
+    width: 1000,
+  },
 ]);
 
 export const educationContainer = style([
   flexColumn,
   {
-    alignItems: 'start'
-  }
+    alignItems: 'start',
+  },
 ]);
 
 export const educationItemContainer = style([
@@ -68,36 +68,36 @@ export const educationItemContainer = style([
   flexRow,
   {
     width: '100%',
-    justifyContent: 'space-between'
-  }
+    justifyContent: 'space-between',
+  },
 ]);
 
 export const companyLogoImg = style({
   objectFit: 'contain',
   maxHeight: 36,
-  maxWidth: 100
+  maxWidth: 100,
 });
 export const placeDateCt = style([
   flexColumn,
   {
     color: '$secondary',
     justifyContent: 'space-between',
-    alignItems: 'end'
-  }
+    alignItems: 'end',
+  },
 ]);
 export const lineItem = style({
-  display: 'block'
+  display: 'block',
 });
 export const lineItemBrief = style({
   display: 'inline-block',
-  marginRight: 4
+  marginRight: 4,
 });
 
 export const titleContainer = style([
   flexRow,
   {
-    justifyContent: 'center'
-  }
+    justifyContent: 'center',
+  },
 ]);
 
 export const addressContainer = style([
@@ -105,19 +105,19 @@ export const addressContainer = style([
   {
     justifyContent: 'center',
     alignItems: 'center',
-    color: '$secondary'
-  }
+    color: '$secondary',
+  },
 ]);
 
 const icon = style([
   {
-    fontSize: 20
-  }
+    fontSize: 20,
+  },
 ]);
 
 export const iconClass = `${icon} material-icons`;
 
 export const skillImg = style({
   objectFit: 'contain',
-  maxHeight: 32
+  maxHeight: 32,
 });

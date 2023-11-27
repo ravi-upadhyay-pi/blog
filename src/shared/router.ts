@@ -27,7 +27,7 @@ export function setupRoutes(
   page.stop();
   store.update((val) => ({
     ...val,
-    component: pageLoadingComponent
+    component: pageLoadingComponent,
   }));
   for (const [from, to] of redirectRoutes) {
     page(from, to);
@@ -36,12 +36,12 @@ export function setupRoutes(
     page(path, async (context) => {
       store.set({
         context,
-        component: pageLoadingComponent
+        component: pageLoadingComponent,
       });
       const component = (await module()).default;
       store.set({
         context,
-        component
+        component,
       });
     });
   }

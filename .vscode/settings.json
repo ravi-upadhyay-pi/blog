@@ -1,0 +1,14 @@
+{
+  "editor.rulers": [100],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.configPath": "./.config/prettierrc",
+  "eslint.validate": ["javascript", "typescript", "svelte"],
+  "eslint.options": {
+    "overrideConfigFile": "./.config/eslintrc.cjs"
+  }
+}

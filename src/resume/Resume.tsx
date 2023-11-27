@@ -17,7 +17,7 @@ import {
   secondaryColor,
   skillImg,
   themeClass,
-  titleContainer
+  titleContainer,
 } from './resume.css';
 
 const resume = RAVI_RESUME;

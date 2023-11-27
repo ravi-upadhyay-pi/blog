@@ -8,7 +8,7 @@
       ['/blog/:id', () => import('./blog/BlogPage.svelte')],
       ['/blog', () => import('./blog/ListPage.svelte')],
       ['/resume', () => import('./resume/ResumePage.svelte')],
-      ['*', () => import('./shared/NotFound.svelte')]
+      ['*', () => import('./shared/NotFound.svelte')],
     ],
     PageLoading
   );
