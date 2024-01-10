@@ -1,10 +1,4 @@
 :5174 {    
-    handle /resume* {
-        uri strip_prefix /resume
-        root * /srv/www/resume
-        file_server
-        try_files {path} /index.html
-    }
     handle {
         root * /srv/www/blog
         file_server
