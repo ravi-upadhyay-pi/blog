@@ -1,6 +1,6 @@
 import { create, props } from '@stylexjs/stylex';
-import { commonStyles } from '../common.stylex';
-import { colors, spacing } from '../tokens.stylex';
+import { commonStyles } from '../styles/common';
+import { colors, spacing } from '../styles/tokens.stylex';
 import { RAVI_RESUME } from './shared/data';
 import { type ICompanyExperience, type IHeader, type IResume, type ISkill } from './shared/model';
 

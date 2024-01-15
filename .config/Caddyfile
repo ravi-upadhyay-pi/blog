@@ -1,4 +1,5 @@
-:5174 {    
+ravi.upadhyay.one {
+    encode gzip
     handle {
         root * /srv/www/blog
         file_server

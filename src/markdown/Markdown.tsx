@@ -1,38 +1,25 @@
-import { StyleXStyles, create, props } from '@stylexjs/stylex';
-import { Heading as HeadingAst, RootContent } from 'mdast';
-import { Root } from 'remark-gfm/lib';
-import { commonStyles } from './common.stylex';
-import { colors, spacing } from './tokens.stylex';
+import { create, props } from '@stylexjs/stylex';
+import { Heading, RootContent } from 'mdast';
+import { commonStyles } from '../styles/common';
+import { colors, spacing } from '../styles/tokens.stylex';
+import { getAnchorText, getAstText } from './Toc';
 
-export interface CustomRootMarkdownProps {
-  content: Root;
-  style: StyleXStyles;
-}
-
-export const CustomRootMarkdown = ({ content, style }: CustomRootMarkdownProps) => (
-  <div {...props(style)}>
-    {content.children.map((child, index) => (
-      <CustomMarkdownContent key={index} content={child} />
-    ))}
-  </div>
-);
-
-interface CustomMarkdownContentsProps {
+interface MarkdownContentsProps {
   content: RootContent[];
 }
 
-function CustomMarkdownContents({ content }: CustomMarkdownContentsProps) {
-  return content.map((child, index) => <CustomMarkdownContent key={index} content={child} />);
+export function MarkdownContents({ content }: MarkdownContentsProps) {
+  return content.map((child, index) => <MarkdownContent key={index} content={child} />);
 }
 
-interface CustomMarkdownContentProps {
+interface MarkdownContentProps {
   content: RootContent;
 }
 
-function CustomMarkdownContent({ content }: CustomMarkdownContentProps) {
+export function MarkdownContent({ content }: MarkdownContentProps) {
   switch (content.type) {
     case 'heading':
-      return <Heading content={content} />;
+      return <HeadingContent content={content} />;
     case 'blockquote':
       return <NotSupported content={content} />;
     case 'break':
@@ -44,13 +31,13 @@ function CustomMarkdownContent({ content }: CustomMarkdownContentProps) {
     case 'delete':
       return (
         <span {...props(styles.delete)}>
-          <CustomMarkdownContents content={content.children} />
+          <MarkdownContents content={content.children} />
         </span>
       );
     case 'emphasis':
       return (
         <span {...props(styles.emphasis)}>
-          <CustomMarkdownContents content={content.children} />
+          <MarkdownContents content={content.children} />
         </span>
       );
     case 'footnoteDefinition':
@@ -60,6 +47,7 @@ function CustomMarkdownContent({ content }: CustomMarkdownContentProps) {
     case 'html':
       return <NotSupported content={content} />;
     case 'image':
+      ``;
       return <NotSupported content={content} />;
     case 'imageReference':
       return <NotSupported content={content} />;
@@ -76,13 +64,13 @@ function CustomMarkdownContent({ content }: CustomMarkdownContentProps) {
     case 'paragraph':
       return (
         <p {...props(styles.p)}>
-          <CustomMarkdownContents content={content.children} />
+          <MarkdownContents content={content.children} />
         </p>
       );
     case 'strong':
       return (
         <strong>
-          <CustomMarkdownContents content={content.children} />
+          <MarkdownContents content={content.children} />
         </strong>
       );
     case 'table':
@@ -102,25 +90,42 @@ function CustomMarkdownContent({ content }: CustomMarkdownContentProps) {
   }
 }
 
-interface HeadingProps {
-  content: HeadingAst;
+interface HeadingContentProps {
+  content: Heading;
 }
 
-function Heading({ content }: HeadingProps) {
-  const phrasingContent = <CustomMarkdownContents content={content.children} />;
+export function HeadingContent({ content }: HeadingContentProps) {
+  const phrasingContent = <MarkdownContents content={content.children} />;
+  const anchorId = getAnchorText(getAstText(content));
   switch (content.depth) {
     case 1:
-      return <h1 {...props(commonStyles.h1)}>{phrasingContent}</h1>;
+      return (
+        <h1 id={anchorId} {...props(commonStyles.h1)}>
+          {phrasingContent}
+        </h1>
+      );
     case 2:
-      return <h2 {...props(commonStyles.h2)}>{phrasingContent}</h2>;
+      return (
+        <h2 id={anchorId} {...props(commonStyles.h2)}>
+          {phrasingContent}
+        </h2>
+      );
     case 3:
-      return <h3 {...props(commonStyles.h3)}>{phrasingContent}</h3>;
+      return (
+        <h3 id={anchorId} {...props(commonStyles.h3)}>
+          {phrasingContent}
+        </h3>
+      );
     case 4:
-      return <h4 {...props(commonStyles.h4)}>{phrasingContent}</h4>;
+      return (
+        <h4 id={anchorId} {...props(commonStyles.h4)}>
+          {phrasingContent}
+        </h4>
+      );
     case 5:
-      return <h5>{phrasingContent}</h5>;
+      return <h5 id={anchorId}>{phrasingContent}</h5>;
     case 6:
-      return <h6>{phrasingContent}</h6>;
+      return <h6 id={anchorId}>{phrasingContent}</h6>;
     default:
       return <></>;
   }
@@ -130,7 +135,7 @@ interface NotSupportedProps {
   content: RootContent;
 }
 
-function NotSupported({ content }: NotSupportedProps) {
+export function NotSupported({ content }: NotSupportedProps) {
   return (
     <div {...props(styles.notSupported)}>
       <div>Not Supported</div>
@@ -139,15 +144,29 @@ function NotSupported({ content }: NotSupportedProps) {
   );
 }
 
-async function fetchBlog(blogId: string) {
-  const url = '/blog/' + blogId + '.md';
-  const response = await fetch(url);
-  return await response.text();
-}
-
 const styles = create({
+  customMarkdown: {
+    display: 'flex',
+    gap: spacing.large,
+  },
+  toc: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: spacing.xsmall,
+    height: 'fit-content',
+    backgroundColor: `color-mix(in oklab, ${colors.primary} 7.5%, white)`,
+    padding: spacing.small,
+    borderRadius: spacing.xsmall,
+    position: 'sticky',
+    top: '10px',
+    border: '1px solid black',
+    minWidth: '250px',
+  },
+  markdownContent: {
+    width: '75%',
+  },
   pre: {
-    backgroundColor: `color-mix(in oklab, ${colors.primary}, white 95%)`,
+    backgroundColor: `color-mix(in oklab, ${colors.primary} 5%, white)`,
     border: '1px solid #bbb',
     borderRadius: '2px',
     padding: spacing.small,

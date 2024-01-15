@@ -9,6 +9,6 @@ export const spacing = defineVars({
 });
 
 export const colors = defineVars({
-  primary: 'brown',
+  primary: 'color-mix(in oklab, blue, white 25%)',
   secondary: 'gray',
 });

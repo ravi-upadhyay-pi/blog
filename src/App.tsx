@@ -4,8 +4,8 @@ import { createRoot, type Root } from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { BlogPage } from './blog/BlogPage';
 import { ListPage as BlogListPage } from './blog/ListPage';
-import './css-reset.css';
 import { Resume } from './resume/Resume';
+import './styles/reset.css';
 
 const reactRoot = getReactRoot();
 reactRoot.render(<App />);

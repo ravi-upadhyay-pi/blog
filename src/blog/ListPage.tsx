@@ -1,6 +1,6 @@
 import { create, props } from '@stylexjs/stylex';
 import { Link } from 'react-router-dom';
-import { commonStyles } from '../common.stylex';
+import { commonStyles } from '../styles/common';
 import { posts } from './shared/data';
 import type { IPost } from './shared/model';
 
